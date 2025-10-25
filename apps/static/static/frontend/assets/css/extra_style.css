@@ -1,0 +1,29 @@
+.banner__wrapper .hero-ctas{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.banner__wrapper .hero-ctas a{
+    width: 210px;
+    padding: 5px;
+}
+.benifit__item{
+    border: 1px solid rgba(221, 221, 221, 0.4);
+    padding: 20px 5px;
+    border-radius: 5px;
+}
+/* .benifit__item .benifit__item-thumb img{
+    -moz-box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    -o-box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+} */
+@media only screen and (max-width:495px) {
+    .banner__wrapper .hero-ctas{
+        display: block;
+    }
+    .banner__wrapper .hero-ctas a:first-child{
+        margin-bottom: 10px;
+    }
+}
+

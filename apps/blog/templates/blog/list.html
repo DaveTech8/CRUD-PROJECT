@@ -1,0 +1,42 @@
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+
+{% block title %} list {% endblock %}
+
+{% block content%}
+<div style="max-width:800px;margin:auto;padding:20px;">
+    <h2>Employee List</h2>
+    <table border="1" width="100%" cellspacing="0" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for emp in Employees %}
+        <tr>
+            <td>{{ emp.employee_id }}</td>
+            <td>{{ emp.employee_name }}</td>
+            <td>{{ emp.employee_email }}</td>
+            <td>{{ emp.employee_contact }}</td>
+            <td>
+                <a href="{% url 'blog:update' emp.id %}">Edit</a> |
+                <form action="{% url 'blog:delete' emp.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('Delete this employee?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No employees found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{% url 'blog:create' %}">➕CREATE</a>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div style="max-width:500px;margin:auto;padding:20px;">
+    <h2>Add New Employee</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">SUBMIT</button>
+    </form>
+    <a href="{% url 'blog:list' %}">Cancel</a>
+</div>
+{% endblock %}`

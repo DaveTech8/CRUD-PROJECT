@@ -1,0 +1,125 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{% block page_title %} Prohecy {% endblock %}</title>
+    <meta name="title" content="PROPHECY TOKEN">
+    <meta name="description" content="PROPHECY TOKEN is a powerful and intentional concept that combines Web3 tech, spiritual mission, and purposeful tokenomics into something meaningful rather than just speculative.">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.png' %}" type="image/x-icon">
+
+    <!-- vendors css -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/swiper-bundle.min.css' %}">
+
+    <!-- main css for template -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/extra_style.css' %}">
+    {% block extra_css %} {% endblock %}
+</head>
+<body>
+
+    <!-- preloader start here -->
+    <div class="preloader">
+        <div class="preloader__inner">
+            <div class="preloader__icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- preloader ending here -->
+
+    <!-- page navigation start -->
+    {% block header %} 
+        {% include 'frontend/layouts/header.html' %}
+    {% endblock %}
+    <!-- page navigation ends -->
+
+    <!-- connect wallet modal start -->
+    <div class="wallet-modal modal fade" id="wallet-option" tabindex="-1" aria-labelledby="choose-wallet"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="choose-wallet">Connect Your Wallet</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please select a wallet from below to connect for Launching yourIDO's</p>
+                    <ul class="wallet__list">
+                        <li class="wallet__list-item">
+                            <a href="">
+                                <span><img src="{% static 'frontend/assets/images/wallet/metamask.svg' %}" alt="metamask"></span>        
+                            </a>
+                        </li>
+                        <li class="wallet__list-item">
+                            <a href=""> 
+                                <span><img src="{% static 'frontend/assets/images/wallet/coinbase.svg' %}" alt="coinbase"></span>        
+                            </a>
+                        </li>
+                        <li class="wallet__list-item">
+                            <a href=""> 
+                                <span><img src="{% static 'frontend/assets/images/wallet/bitski.svg' %}" alt="bitski"></span>            
+                            </a>
+                        </li>
+                        <li class="wallet__list-item">
+                            <a href=""> 
+                                <span><img src="{% static 'frontend/assets/images/wallet/venly.svg' %}" alt="venly Wallet"> </span>        
+                            </a>
+                        </li>
+                        <li class="wallet__list-item">
+                            <a href="">
+                                <span><img src="assets/images/wallet/wallet-connect.svg" alt=" Wallet connect"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        By connecting your wallet, you agree to our 
+                        <a href="">Terms of Service</a> and our 
+                        <a href="">Privacy Policy</a> .
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- connect wallet modal end -->
+
+    <!-- main content starts -->
+    {% block content %} 
+    
+    {% endblock %}
+    <!-- main content ends -->
+
+    <!-- page footer starts -->
+    {% block footer %} 
+        {% include 'frontend/layouts/footer.html' %}
+    {% endblock %}
+    <!-- page footer ends -->
+    
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <!-- scrollToTop ending here -->
+
+    <!-- vendor plugins -->
+    <script src="{% static 'frontend/assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/all.min.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/aos.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/purecounter.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/custom.js' %}"></script>
+    {% block extra_js %} {% endblock %}
+</body>
+</html>
+
+
+
